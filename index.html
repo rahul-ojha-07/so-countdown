@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>2020 NewYear Countdwon. </title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
@@ -40,10 +40,16 @@
                 var m = Math.floor((gap % (hour)) / (minute));
                 var s = Math.floor((gap % (minute)) / (second));
         
-                document.getElementById('day').innerText = d;
-                document.getElementById('hour').innerText = h;
-                document.getElementById('minute').innerText = m;
-                document.getElementById('second').innerText = s;
+                document.getElementById('day').innerText = update(d);
+                document.getElementById('hour').innerText = update(h);
+                document.getElementById('minute').innerText = update(m);
+                document.getElementById('second').innerText = update(s);
+        }
+        function update(x) {
+            if (x<10)
+                return '0'+x;
+            else
+                return x;
         }
         
         setInterval(function(){
